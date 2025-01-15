@@ -12,7 +12,7 @@ void WindowInverter::SetBackground(GLfloat r, GLfloat g, GLfloat b)
 
 void WindowInverter::OnRenderWindowPre()
 {
-    auto window = g_pHyprOpenGL->m_pCurrentWindow.lock();
+    auto window = g_pHyprOpenGL->m_RenderData.currentWindow.lock();
     bool shouldInvert =
         (std::find(m_InvertedWindows.begin(), m_InvertedWindows.end(), window)
             != m_InvertedWindows.end()) ^
@@ -42,7 +42,7 @@ void WindowInverter::OnRenderWindowPost()
     {
         if (m_DecorationsWrapped)
         {
-            for (auto& decoration : g_pHyprOpenGL->m_pCurrentWindow.lock()->m_dWindowDecorations)
+            for (auto& decoration : g_pHyprOpenGL->m_RenderData.currentWindow.lock()->m_dWindowDecorations)
             {
                 // Debug::log(LOG, "REMOVE: Window {:p}, Decoration {:p}", (void*)g_pHyprOpenGL->m_pCurrentWindow.get(), (void*)decoration.get());
                 if (DecorationsWrapper* wrapper = dynamic_cast<DecorationsWrapper*>(decoration.get()))
