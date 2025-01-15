@@ -1,0 +1,15 @@
+[repository]
+name = "hyprchroma"
+authors = ["circute"]
+
+[Hypr-DarkWindow]
+description = "Apply Chromakey algorithm"
+authors = ["circute"]
+commit_pins = [
+    # v Hyprland                                  v Hypr-DarkWindow
+    ["0bd541f2fd902dbfa04c3ea2ccf679395e316887", "00c91c608d57b82369cd0d0d04ffbcb7c4bc031c"], # v0.46.2
+]
+output = "out/hyprchroma.so"
+build = [
+    "make all",
+]
