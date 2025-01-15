@@ -2,7 +2,7 @@
 name = "hyprchroma"
 authors = ["circute"]
 
-[Hypr-DarkWindow]
+[hyprchroma]
 description = "Apply Chromakey algorithm"
 authors = ["circute"]
 commit_pins = [
